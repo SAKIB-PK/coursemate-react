@@ -9,8 +9,11 @@ const Services = () => {
     return (
         <div className="container">
             <div className="row mt-5">
-                <div className="col-md-6">
-                    <h1 className="d-flex justify-content-center align-items-center flex-column"> Explore you Passion ! </h1>
+                <div className="col-md-6 my-md-auto">
+                    <h1> Explore you Passion ! </h1>
+                    <blockquote>
+                    “Research shows that you begin learning in the womb and go right on learning until the moment you pass on. Your brain has a capacity for learning that is virtually limitless, which makes every human a potential genius.” – Michael J. Gelb
+                    </blockquote>
                 </div>
                 <div className="col-md-6">
                     <img src="images/services.svg" alt="a girl explore their passion " className="img-fluid" />

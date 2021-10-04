@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import About from './Component/About/About';
 import Contact from './Component/Contact/Contact';
 import Footer from './Component/Footer/Footer';
 import Header from './Component/Header/Header';
@@ -44,6 +45,9 @@ function App() {
           </Route>
           <Route path='/contact'>
             <Contact />
+          </Route>
+          <Route path='/about'>
+            <About />
           </Route>
           <Route  path='*'>
             <NotFound />
