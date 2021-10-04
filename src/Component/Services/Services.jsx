@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
+import { ServiceCon } from '../../App';
 import Service from './Service/Service';
 
+
 const Services = () => {
-    const [service,setService] = useState([])
-    useEffect(()=> {
-        fetch('data.json')
-        .then(res => res.json())
-        .then(data => setService(data))
-    },[])
+    const service = useContext(ServiceCon)
+    
     return (
         <div className="container">
             <div className="row mt-5">

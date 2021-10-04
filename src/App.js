@@ -1,12 +1,26 @@
+import { createContext, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Banner from './Component/Banner/Banner';
 import Footer from './Component/Footer/Footer';
 import Header from './Component/Header/Header';
+import Hero from './Component/Hero/Hero';
 import NotFound from './Component/NotFound/NotFound';
 import Services from './Component/Services/Services';
 
+
+
+export const ServiceCon = createContext()
+
+
 function App() {
+
+  const [service,setService] = useState([])
+  
+    useEffect(()=> {
+        fetch('data.json')
+        .then(res => res.json())
+        .then(data => setService(data))
+    },[])
   return (
     <>
       <Router>
@@ -14,13 +28,19 @@ function App() {
         
         <Switch>
           <Route exact path='/'>
-             <Banner />
+              <ServiceCon.Provider value={service}>
+                <Hero />
+             </ServiceCon.Provider>
           </Route>
           <Route exact path='/home'>
-             <Banner />
+            <ServiceCon.Provider value={service}>
+                <Hero />
+             </ServiceCon.Provider>
           </Route>
           <Route path='/services'>
-            <Services />
+           <ServiceCon.Provider value={service}>
+              <Services />
+           </ServiceCon.Provider>
           </Route>
           <Route path='*'>
             <NotFound />
