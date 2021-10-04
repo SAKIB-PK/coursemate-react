@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Contact from './Component/Contact/Contact';
 import Footer from './Component/Footer/Footer';
 import Header from './Component/Header/Header';
 import Hero from './Component/Hero/Hero';
@@ -25,14 +26,13 @@ function App() {
     <>
       <Router>
         <Header />
-        
         <Switch>
           <Route exact path='/'>
               <ServiceCon.Provider value={service}>
                 <Hero />
              </ServiceCon.Provider>
           </Route>
-          <Route exact path='/home'>
+          <Route  path='/home'>
             <ServiceCon.Provider value={service}>
                 <Hero />
              </ServiceCon.Provider>
@@ -42,7 +42,10 @@ function App() {
               <Services />
            </ServiceCon.Provider>
           </Route>
-          <Route path='*'>
+          <Route path='/contact'>
+            <Contact />
+          </Route>
+          <Route  path='*'>
             <NotFound />
           </Route>
 

@@ -11,7 +11,7 @@ function Footer() {
         <p>
           You can unsubscribe at any time.
         </p>
-        <div class="input-group w-50 mx-auto mb-3">
+        <div className="input-group w-50 mx-auto mb-3">
             <input type="text" className="form-control" placeholder="Recipient's Email Name" aria-label="Email Name" aria-describedby="button-addon2"/>
             <button className="btn btn-danger" type="button" id="button-addon2">Button</button>
         </div>

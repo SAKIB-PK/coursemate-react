@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { ServiceCon } from '../../App';
 import Banner from '../Banner/Banner';
 import Service from '../Services/Service/Service';
-import './Hero.css';
 
 const Hero = () => {
     const service =useContext(ServiceCon)
